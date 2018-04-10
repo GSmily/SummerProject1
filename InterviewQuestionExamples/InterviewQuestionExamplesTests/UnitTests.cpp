@@ -23,5 +23,20 @@ namespace InterviewQuestionExamplesTests
 			}
 		}
 
+		TEST_METHOD(PoundTest) {
+			std::string testString("##########\n"
+								   "##      ##\n"
+								   "# #    # #\n"
+								   "#  #  #  #\n"
+								   "#   ##   #\n"
+								   "#   ##   #\n"
+								   "#  #  #  #\n"
+								   "# #    # #\n"
+								   "##      ##\n"
+								   "##########\n");
+
+			Assert::AreEqual(testString, poundPattern());
+		}
+
 	};
 }

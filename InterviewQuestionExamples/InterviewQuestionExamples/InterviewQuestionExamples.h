@@ -10,3 +10,5 @@
 extern "C++" INTERVIEWQUESTIONEXAMPLES_API unsigned long long fibonacci(
 	const unsigned long long n
 );
+
+extern "C++" INTERVIEWQUESTIONEXAMPLES_API std::string poundPattern();
