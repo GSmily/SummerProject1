@@ -7,8 +7,14 @@
 #define INTERVIEWQUESTIONEXAMPLES_API __declspec(dllimport)
 #endif
 
-extern "C++" INTERVIEWQUESTIONEXAMPLES_API unsigned long long fibonacci(
-	const unsigned long long n
-);
+extern "C++" INTERVIEWQUESTIONEXAMPLES_API
+unsigned long long fibonacci(const unsigned long long n);
 
-extern "C++" INTERVIEWQUESTIONEXAMPLES_API std::string poundPattern();
+extern "C++" INTERVIEWQUESTIONEXAMPLES_API
+std::string poundPattern();
+
+extern "C++" INTERVIEWQUESTIONEXAMPLES_API
+std::vector<bool> encodeBit(bool bit);
+
+extern "C++" INTERVIEWQUESTIONEXAMPLES_API
+bool decodeBitSequence(std::vector<bool> encodedBitSequence);
