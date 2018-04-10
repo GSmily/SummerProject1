@@ -15,18 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="..\..\..\Gavin%27s Project\InterviewQuestionExamples\InterviewQuestionExamples\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="..\..\..\Gavin%27s Project\InterviewQuestionExamples\InterviewQuestionExamples\targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Gavin%27s Project\InterviewQuestionExamples\InterviewQuestionExamples\InterviewQuestionExamples.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="..\..\..\Gavin%27s Project\InterviewQuestionExamples\InterviewQuestionExamples\stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Example1.cpp">
+    <ClCompile Include="..\..\..\Gavin%27s Project\InterviewQuestionExamples\InterviewQuestionExamples\InterviewQuestionExamples.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Gavin%27s Project\InterviewQuestionExamples\InterviewQuestionExamples\dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
