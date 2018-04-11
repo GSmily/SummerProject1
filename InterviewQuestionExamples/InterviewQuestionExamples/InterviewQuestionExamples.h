@@ -18,3 +18,6 @@ std::vector<bool> encodeBit(bool bit);
 
 extern "C++" INTERVIEWQUESTIONEXAMPLES_API
 bool decodeBitSequence(std::vector<bool> encodedBitSequence);
+
+extern "C++" INTERVIEWQUESTIONEXAMPLES_API
+bool isPalindrome(std::string word);

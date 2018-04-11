@@ -36,7 +36,7 @@ namespace InterviewQuestionExamplesTests {
 		}
 
 		TEST_METHOD(ErrorCorrectionTest) {
-			const double accuracy = .99;  // )100*accuracy) required to pass the test
+			const double accuracy = .99;  // (100*accuracy) required to pass the test
 			const int noiseRatio = 50;  // 1 out of noiseRatio bits are flipped
 			const int numberOfInputs = 50;  // Sets how many tests to run
 
@@ -57,7 +57,7 @@ namespace InterviewQuestionExamplesTests {
 
 			// Randomly alter the encoded sequences with specified noiseRatio
 			for (int i = 0; i < numberOfInputs; ++i) {
-				for (int j = 0; j < encodedInput[i].size(); ++j) {
+				for (unsigned int j = 0; j < encodedInput[i].size(); ++j) {
 					if (rand() % noiseRatio == 0)
 						encodedInput[i][j] = !encodedInput[i][j];
 				}
@@ -83,6 +83,33 @@ namespace InterviewQuestionExamplesTests {
 			std::wstring widestring = std::wstring(messageAsString.begin(), messageAsString.end());
 
 			Assert::IsTrue(actualErrors <= maxErrors, widestring.c_str());
+		}
+
+		TEST_METHOD(PalindomeTest) {
+			std::vector<std::string> validInputs = {
+				"mom",
+				"race car",
+				"!r a^c e  ca *(r*&",
+				"",
+				"w",
+				"^",
+				" ",
+				"^a^"
+			};
+
+			std::vector<std::string> invalidInputs = {
+				"moma",
+				"race carr",
+				"!r a^c e  ca *(r*s&",
+				" ",
+				"www.com",
+				"a^^w"
+			};
+
+			for (unsigned int i = 0; i < validInputs.size(); ++i)
+				Assert::IsTrue(isPalindrome(validInputs[i]), L"False Positive.");
+			for (unsigned int i = 0; i < invalidInputs.size(); ++i)
+				Assert::IsFalse(isPalindrome(invalidInputs[i]), L"True Negative.");
 		}
 	};
 }
