@@ -177,6 +177,16 @@ namespace InterviewQuestionExamplesTests {
 			}
 			delete traversalNode;
 			delete head;
+
+			/* Edge Case Testing */
+			Node* head = new Node;
+			head->value = 1;
+			head = reverseSecondHalfLinkedList(head);
+			Assert::AreEqual(1, head->value);
+			
+			head = nullptr;
+			head = reverseSecondHalfLinkedList(head);
+			Assert::IsNull(head);
 		}
 	};
 }
