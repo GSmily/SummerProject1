@@ -111,5 +111,72 @@ namespace InterviewQuestionExamplesTests {
 			for (unsigned int i = 0; i < invalidInputs.size(); ++i)
 				Assert::IsFalse(isPalindrome(invalidInputs[i]), L"True Negative.");
 		}
+
+		TEST_METHOD(ReverseSecondHalfLinkedListTest) {
+			// Start head of list with value 1
+			Node* head = new Node;
+			head->value = 1;
+
+			// Create linked list with values: 1->2->3->4->5->nullptr
+			Node* traversalNode = head;
+			for (int i = 2; i < 6; ++i) {
+				Node* next = new Node;
+				next->value = i;
+				traversalNode->next = next;
+				traversalNode = traversalNode->next;
+			}
+			traversalNode->next = nullptr;
+			traversalNode = head;
+
+			// Call function to test
+			head = reverseSecondHalfLinkedList(head);
+
+			// Verify that second half (4/5) have swapped and clean up memory
+			for (int i = 1; i < 4; ++i) {
+				Assert::AreEqual(i, head->value);
+				Node* temp = head;
+				head = head->next;
+				delete temp;
+			}
+			for (int i = 5; i > 3; --i) {
+				Assert::AreEqual(i, head->value);
+				Node* temp = head;
+				head = head->next;
+				delete temp;
+			}
+			delete traversalNode;
+			delete head;
+
+			/* Part 2 of Tests. Same idea but with a linked list 1 longer.*/
+			Node* head = new Node;
+			head->value = 1;
+
+			Node* traversalNode = head;
+			for (int i = 2; i < 7; ++i) {
+				Node* next = new Node;
+				next->value = i;
+				traversalNode->next = next;
+				traversalNode = traversalNode->next;
+			}
+			traversalNode->next = nullptr;
+			traversalNode = head;
+
+			head = reverseSecondHalfLinkedList(head);
+
+			for (int i = 1; i < 4; ++i) {
+				Assert::AreEqual(i, head->value);
+				Node* temp = head;
+				head = head->next;
+				delete temp;
+			}
+			for (int i = 6; i > 3; --i) {
+				Assert::AreEqual(i, head->value);
+				Node* temp = head;
+				head = head->next;
+				delete temp;
+			}
+			delete traversalNode;
+			delete head;
+		}
 	};
 }
