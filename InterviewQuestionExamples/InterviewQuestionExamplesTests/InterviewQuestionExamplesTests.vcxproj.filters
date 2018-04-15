@@ -30,4 +30,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Gavin%27s Project\InterviewQuestionExamples\InterviewQuestionExamplesTests\packages.config" />
+  </ItemGroup>
 </Project>

@@ -19,3 +19,4 @@
 #include <cmath>
 #include <iostream>
 #include <sstream>
+#include <boost\multiprecision\cpp_int.hpp>

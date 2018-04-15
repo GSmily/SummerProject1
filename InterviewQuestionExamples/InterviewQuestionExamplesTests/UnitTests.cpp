@@ -9,15 +9,18 @@ namespace InterviewQuestionExamplesTests {
 	public:
 
 		TEST_METHOD(FibonnaciTest) {
-			std::vector<unsigned long long> smallFibonnaciTestSequence = {
-				0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 
-				987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 
-				121393, 196418, 317811
+			std::vector<int> smallFibonnaciTestSequence = {
+				0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377
 			};
 
 			for (unsigned long long i = 0; i < smallFibonnaciTestSequence.size(); ++i) {
-				Assert::AreEqual(smallFibonnaciTestSequence[i], fibonacci(i));
+				boost::multiprecision::cpp_int result = fibonacci(i);
+				Assert::AreEqual(smallFibonnaciTestSequence[i], result.convert_to<int>());
 			}
+
+			std::string expected = "280571172992510140037611932413038677189525";
+			std::string actual = std::to_string(fibonacci(200));
+			Assert::AreEqual(expected, actual);
 		}
 
 		TEST_METHOD(PoundTest) {
