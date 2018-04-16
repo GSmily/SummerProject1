@@ -28,3 +28,6 @@ struct Node {
 };
 extern "C++" INTERVIEWQUESTIONEXAMPLES_API
 Node* reverseSecondHalfLinkedList(Node* head);
+
+extern "C++" INTERVIEWQUESTIONEXAMPLES_API
+std::string alienLanguage(std::vector<std::string> words);

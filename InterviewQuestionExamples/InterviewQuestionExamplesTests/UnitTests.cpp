@@ -191,5 +191,25 @@ namespace InterviewQuestionExamplesTests {
 			head = reverseSecondHalfLinkedList(head);
 			Assert::IsNull(head);
 		}
+
+		TEST_METHOD(AlienLanguageTest) {
+			std::vector<std::string> firstLanguage = {
+				"baa", "abcd", "abca", "cab", "cad"
+			};
+
+			std::vector<std::string> secondLanguage = {
+				"caa", "aaa", "aab"
+			};
+
+			std::vector<std::string> edgeCase1 = { "abc" };
+			std::vector<std::string> edgeCase2 = { "" };
+			std::vector<std::string> edgeCase3 = { };
+
+			Assert::AreEqual(std::string("bdac"), alienLanguage(firstLanguage));
+			Assert::AreEqual(std::string("cab"), alienLanguage(secondLanguage));
+			Assert::AreEqual(std::string("abc"), alienLanguage(edgeCase1));
+			Assert::AreEqual(std::string(""), alienLanguage(edgeCase2));
+			Assert::AreEqual(std::string(""), alienLanguage(edgeCase3));
+		}
 	};
 }
